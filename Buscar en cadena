@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <iostream>
+#include <cstring>
+
+bool buscastring(char*bigarray, char*smallarray);
+
+char*cadena1="lenguajes de programacion ITM";
+char*cadena2="ITM";
+
+
+int main ()
+{
+
+ buscastring(cadena1, cadena2);
+
+}
+
+
+bool buscastring(char*bigarray, char*smallarray)
+{
+    int i=0;
+    int j=0;
+    int coincidencia=0;
+
+  for (i ;i <strlen(cadena1);i++)
+  {
+   if (cadena2[j] == cadena1[i])
+   {
+      coincidencia++;
+      j++;
+      if (coincidencia == strlen(cadena2))
+       {
+          std::cout<<"true"<<std::endl;
+          break;
+       }
+   }
+          else
+          {
+            coincidencia=0;
+            j=0;
+          }
+  }
+
+  if (coincidencia != strlen(cadena2))
+  std::cout<<"false"<<std::endl;
+
+}
